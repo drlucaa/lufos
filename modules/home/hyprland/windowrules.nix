@@ -89,7 +89,7 @@ in {
   wayland.windowManager.hyprland = {
     settings = {
       # Merge default window rules with host-specific window rules
-      windowrule = defaultWindowRules ++ hostWindowRules.windowrule;
+      windowrule = defaultWindowRules;
     };
   };
 }

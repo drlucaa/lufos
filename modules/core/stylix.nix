@@ -37,13 +37,9 @@ lib.mkIf stylixEnable {
       size = 24;
     };
     fonts = {
-      monaspace = {
-        package = pkgs.monaspace;
-        name = "Monaspace";
-      };
       monospace = {
-        package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrains Mono";
+        package = pkgs.monaspace;
+        name = "Monaspace Neon";
       };
       sansSerif = {
         package = pkgs.montserrat;

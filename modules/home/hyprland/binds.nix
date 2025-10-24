@@ -118,7 +118,7 @@
 in {
   wayland.windowManager.hyprland.settings = {
     # Merge default binds with host-specific binds
-    bind = defaultBinds ++ hostBinds.bind;
-    bindm = defaultBindm ++ hostBinds.bindm;
+    bind = defaultBinds;
+    bindm = defaultBindm;
   };
 }
