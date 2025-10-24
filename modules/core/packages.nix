@@ -37,16 +37,7 @@
   # --------------------------------------------------------------------------------
   # Nixpkgs Configuration
   # --------------------------------------------------------------------------------
-  nixpkgs.config = {
-    allowUnfree = true;
-    # allowUnfreePredicate = pkg:
-    #   builtins.elem (lib.getName pkg) [
-    #     "cursor"
-    #     "zed"
-    #     "jdk"
-    #     "claude"
-    #   ];
-  };
+  nixpkgs.config.allowUnfree = true;
 
   # --------------------------------------------------------------------------------
   # System-wide Packages
