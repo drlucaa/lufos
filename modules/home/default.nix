@@ -52,14 +52,10 @@ in {
   ]
 
   # Window Manager - conditional import based on windowManager variable
-  # ++ lib.optionals (windowManager == "niri") [
-  #   ./niri
-  # ]
-  # ++ lib.optionals (windowManager == "hyprland") [
-  #   ./hyprland
-  # ]
-  ++ [
+  ++ lib.optionals (windowManager == "niri") [
     ./niri
+  ]
+  ++ lib.optionals (windowManager == "hyprland") [
     ./hyprland
   ]
 

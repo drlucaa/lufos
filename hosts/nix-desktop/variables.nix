@@ -7,7 +7,7 @@
   # --- Core Desktop Choices ---
   # The window manager to use. This is a fundamental choice.
   # Options: "niri", "hyprland"
-  # windowManager = "hyprland";
+  windowManager = "niri";
 
   # The bar/shell to use. This is your main desktop interface.
   # Options: "dms" (Dank Material Shell), "noctalia", "waybar"
