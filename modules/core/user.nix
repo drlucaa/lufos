@@ -38,6 +38,7 @@ in
         homeDirectory = "/home/${username}";
         stateVersion = "23.11";
       };
+      nixpkgs.config.allowUnfree = true;
     };
   };
   users.mutableUsers = true;
