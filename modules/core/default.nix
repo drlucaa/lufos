@@ -13,7 +13,6 @@
     ./printing.nix
     ./security.nix
     ./services.nix
-    ./starfish.nix
     ./steam.nix
     ./stylix.nix
     ./syncthing.nix

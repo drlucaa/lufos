@@ -19,6 +19,7 @@
       package = pkgs.hyprland; # Using unstable nixpkgs for latest version
       portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
+    firefox.enable = true;
     hyprlock.enable = true;
     fuse.userAllowOther = true;
     mtr.enable = true; # Network diagnostic tool

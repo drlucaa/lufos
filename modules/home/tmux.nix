@@ -3,9 +3,9 @@
   programs.tmux = {
     enable = true;
     mouse = true;
-    shell = "${pkgs.zsh}/bin/zsh";
+    shell = "${pkgs.zsh}/bin/fish";
     prefix = "C-a";
-    terminal = "kitty";
+    terminal = "ghostty";
     keyMode = "vi";
 
     extraConfig = ''

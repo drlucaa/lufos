@@ -25,5 +25,12 @@
     };
   };
 
+  networking.networkmanager.ensureProfiles.profiles.home = {
+    connection = { id = "Home wifi"; type = "wifi"; autoconnect = true; };
+    wifi = { ssid = "Schlumpf Guest"; mode = "infrastructure"; };
+    wifi-security = { key-mgmt = "wpa-psk"; psk = "fGA-cYYF3rkMwjz!smw9"; };
+    ipv4.method = "auto"; ipv6.method = "auto";
+  };
+
   environment.systemPackages = with pkgs; [networkmanagerapplet];
 }

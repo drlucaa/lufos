@@ -2,8 +2,8 @@
   imports = [
     ./hardware.nix
     ./host-packages.nix
-    ./disko.nix
-    inputs.disko.nixosModules.disko
+    # ./disko.nix
+    # inputs.disko.nixosModules.disko
   ];
 
   # Enable ly display manager

@@ -1,11 +1,10 @@
-{inputs, host, lib, ...}: let
+{host, lib, ...}: let
   variables = import ../../hosts/${host}/variables.nix;
   inherit (variables) waybarChoice;
 
   # New variable system
   windowManager = variables.windowManager or "hyprland";
   barChoice = variables.barChoice or "waybar";
-  defaultShell = variables.defaultShell or "zsh";
 
   # Legacy variable support (backwards compatibility)
   enableDMS = variables.enableDankMaterialShell or false;
@@ -21,9 +20,11 @@ in {
     ./bottom.nix
     ./btop.nix
     ./cava.nix
+    ./config.nix
     ./emoji.nix
     ./eza.nix
     ./fastfetch
+    ./fish
     ./fzf.nix
     ./gh.nix
     ./ghostty.nix
@@ -37,7 +38,6 @@ in {
     ./obs-studio.nix
     ./qt.nix
     ./scripts
-    ./starship.nix
     ./stylix.nix
     ./swappy.nix
     ./swaync.nix
@@ -45,6 +45,7 @@ in {
     ./tmux.nix
     ./virtmanager.nix
     ./wlogout
+    ./walker.nix
     ./xdg.nix
     ./yazi
     ./zoxide.nix
@@ -57,16 +58,6 @@ in {
   ]
   ++ lib.optionals (windowManager == "hyprland") [
     ./hyprland
-  ]
-
-
-  # Shell - conditional import based on defaultShell variable
-  ++ lib.optionals (defaultShell == "fish") [
-    ./fish
-    ./fish/fishrc-personal.nix
-  ]
-  ++ lib.optionals (defaultShell == "zsh") [
-    ./zsh
   ]
 
   # Bar - conditional import based on barChoice variable

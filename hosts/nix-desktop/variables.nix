@@ -13,10 +13,6 @@
   # Options: "dms" (Dank Material Shell), "noctalia", "waybar"
   barChoice = "waybar";
 
-  # The default shell for your terminal.
-  # Options: "fish", "zsh"
-  defaultShell = "zsh";
-
   # --- Display & Input ---
   # Configure your monitors here. Run `hyprctl monitors` to get the correct values.
   # Example: "monitor=HDMI-A-1,1920x1080@60,auto,1"

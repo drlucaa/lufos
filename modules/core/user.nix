@@ -9,8 +9,6 @@
 let
   variables = import ../../hosts/${host}/variables.nix;
   inherit (variables) gitUsername;
-  defaultShell = variables.defaultShell or "fish";
-  shellPackage = if defaultShell == "fish" then pkgs.fish else pkgs.zsh;
 in
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
@@ -56,7 +54,7 @@ in
       "nixosvmtest"
     ];
     # Use configured shell based on defaultShell variable
-    shell = shellPackage;
+    shell = pkgs.fish;
     ignoreShellProgramCheck = true;
   };
   nix.settings.allowed-users = [ "${username}" ];

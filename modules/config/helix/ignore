@@ -1,0 +1,7 @@
+!.helix/
+!.github/
+!.gitignore
+!.gitattributes
+!.env
+!**/mock/**
+.idea

@@ -1,3 +1,13 @@
+config-notification {
+    disable-failed
+}
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
 input {
     keyboard {
         xkb {
@@ -24,21 +34,13 @@ layout {
         inactive-color "#45475a"
         urgent-color "#f5c2e7"
     }
- //    focus-ring {
-	// off
- //        width 2
- //        active-color   "#808080"
- //        inactive-color "#505050"
- //    }
- //    shadow {
- //        softness 30
- //        spread 5
- //        offset x=0 y=5
- //        color "#0007"
- //    }
- //    struts {
- //    }
+    focus-ring {
+    	off
+	}
+    struts {
+    }
 }
+
 overview {
     // Set the backdrop color behind workspaces in the overview
     backdrop-color "#1e1e2e"
@@ -56,6 +58,22 @@ overview {
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+spawn-at-startup "waybar"
+spawn-at-startup "bash" "-c" "wl-paste --watch cliphist store &"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "swww" "img" "${stylixImage}"
+spawn-at-startup "wal" "-R" "waybar"
+spawn-at-startup "/usr/lib/mate-polkit/polkit-mate-authentication-agent-1"
+spawn-at-startup "/usr/lib/xdg-desktop-portal-gtk"
+spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
+spawn-at-startup "crystal-dock" "-d"
 
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
@@ -86,12 +104,11 @@ binds {
     Mod+Space hotkey-overlay-title="Application Launcher" { spawn "walker"; }
 
     // === Ignis Controls ===
-    Mod+M hokey-overlay-title="Task Manager" { spawn "ghostty" "btop"; }
-    Mod+N hokey-overlay-title="Notification Center" { spawn "swaync-client" "-t"; }
+    Mod+M hotkey-overlay-title="Task Manager" { spawn "ghostty" "btop"; }
+    Mod+N hotkey-overlay-title="Notification Center" { spawn "swaync-client" "-t"; }
     
     // === Security ===
-    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "swaylock" }
-    Mod+Ctrl+L hotkey-overlay-title="Hyprlock" { spawn "hyprlock" }
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "hyprlock"; }
     Mod+Shift+Q { quit; }
 
     // === Audio Controls ===
@@ -181,7 +198,7 @@ binds {
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+Ctrl+F { expand-column-to-available-width; }
-    Mod++C { center-column; }
+    Mod+C { center-column; }
 
     // === Manual Sizing ===
     Mod+Minus { set-column-width "-10%"; }
