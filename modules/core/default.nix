@@ -2,7 +2,6 @@
 {
   imports = [
     ./boot.nix
-    ./controller-support.nix
     ./flatpak.nix
     ./fonts.nix
     ./ly.nix

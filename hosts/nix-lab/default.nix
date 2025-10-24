@@ -1,17 +1,16 @@
-{pkgs, ...}: {
+{inputs, pkgs, ...}: {
   imports = [
-    ./hardware.nix
     ./host-packages.nix
+    ./disko.nix
+    inputs.disko.nixosModules.disko
   ];
 
-  # Enable Asus ROG services for keyboard, trackpad, and backlight control
-  services.asusd = {
-    enable = true;
-    enableUserService = true;
-  };
+  # Enable ly display manager
+  services.displayManager.ly.enable = true;
 
-  # Note: supergfxctl is not needed for Intel-only model (no dGPU to switch)
+  # Keep niri available at system level for ly display manager to detect it
+  programs.niri.package = pkgs.niri;
 
-  # Enable greetd display manager
-  services.greetd.enable = true;
+  # Ensure niri session is available to display manager
+  services.displayManager.sessionPackages = [ pkgs.niri ];
 }

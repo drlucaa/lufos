@@ -2,14 +2,12 @@
   imports = [
     ./hardware.nix
     ./host-packages.nix
+    ./disko.nix
     inputs.disko.nixosModules.disko
   ];
 
-  # Enable sddm display manager
-   services.displayManager.ly.enable = true;
-
-  # Enable niri window manager (commented out - using home-manager instead for better portal integration)
-  # programs.niri.enable = true;
+  # Enable ly display manager
+  services.displayManager.ly.enable = true;
 
   # Keep niri available at system level for ly display manager to detect it
   programs.niri.package = pkgs.niri;

@@ -51,7 +51,17 @@
   in {
     nixosConfigurations = {
       # Host-specific configurations
-      nix-desktop = mkHost { hostname = "nix-desktop"; profile = "nvidia"; username = "luca"; };
+      nix-desktop = mkHost {
+        hostname = "nix-desktop";
+        profile = "nvidia";
+        username = "luca";
+      };
+
+      nix-lab = mkHost {
+        hostname = "nix-lab";
+        profile = "vm";
+        username = "luca";
+      };
     };
   };
 }

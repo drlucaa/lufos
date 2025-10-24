@@ -44,16 +44,16 @@ in
   users.mutableUsers = true;
   users.users.${username} = {
     isNormalUser = true;
+    initialPassword = "Init.123";
     description = "${gitUsername}";
     extraGroups = [
       "adbusers"
       "docker"
-      "libvirtd" # For VirtManager
       "lp"
       "networkmanager"
       "scanner"
       "wheel" # sudo access
-      "vboxusers" # For VirtualBox
+      "nixosvmtest"
     ];
     # Use configured shell based on defaultShell variable
     shell = shellPackage;

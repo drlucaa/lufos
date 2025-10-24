@@ -56,7 +56,7 @@
     gdu # Graphical disk usage
     glxinfo # For `inxi -G` GPU info
     gping # Graphical ping
-    greetd.tuigreet # Login manager
+    tuigreet # Login manager
     htop # System monitor
     inxi # System information tool
     killall # Kills all instances of a program

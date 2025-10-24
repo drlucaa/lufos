@@ -48,8 +48,6 @@
   enableNFS = false;               # Network File System
   printEnable = false;             # Printing support
   thunarEnable = true;             # Thunar file manager
-  controllerSupportEnable = false; # Gaming controller support
-  flutterdevEnable = false;        # Flutter development environment
   syncthingEnable = false;         # File synchronization
 
   # --- Window Manager Specific Settings ---

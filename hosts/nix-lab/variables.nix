@@ -1,78 +1,70 @@
 {
-  # Git Configuration ( For Pulling Software Repos )
-  gitUsername = "theblackdon";
-  gitEmail = "rj.jones@flosstech.com";
+  # --- User Identification ---
+  # Used for Git commits and general user info.
+  gitUsername = "Luca Fondo";
+  gitEmail = "luca.fondo@trai.ch";
 
-  # Hyprland Settings
-  # Configure your monitors here - this is host-specific
-  # ex "monitor=HDMI-A-1, 1920x1080@60,auto,1"
-  # ROG Flow Z13 has a 13.4" touch display
+  # --- Core Desktop Choices ---
+  # The window manager to use. This is a fundamental choice.
+  # Options: "niri", "hyprland"
+  windowManager = "niri";
+
+  # The bar/shell to use. This is your main desktop interface.
+  # Options: "dms" (Dank Material Shell), "noctalia", "waybar"
+  barChoice = "waybar";
+
+  # The default shell for your terminal.
+  # Options: "fish", "zsh"
+  defaultShell = "zsh";
+
+  # --- Display & Input ---
+  # Configure your monitors here. Run `hyprctl monitors` to get the correct values.
+  # Example: "monitor=HDMI-A-1,1920x1080@60,auto,1"
   extraMonitorSettings = ''
-  monitor=eDP-1,1920x1200@120,0x0,1.0
+  monitor=,preferred,auto,1
   '';
 
-  # Hyprland Plugin Settings
-  hyprexpoSettings = {
-    columns = 2;
-    gap_size = 5;
-    bg_col = "rgb(111111)";
-    workspace_method = "center current";
-    skip_empty = true;
-    enable_gesture = true;
-    gesture_fingers = 3;
-    gesture_distance = 300;
-    gesture_positive = true;
-  };
-
-  hyprscrollingSettings = {
-    column_default_width = "onehalf";
-    column_widths = "onehalf one";
-    fullscreen_on_one_column = false;
-    focus_fit_method = 1;
-  };
-
-  # Waybar Settings
-  clock24h = false;
-
-  # Program Options
-  browser = "zen"; # Set Default Browser (google-chrome-stable for google-chrome)
-  terminal = "kitty"; # Set Default System Terminal
+  # Keyboard layout settings
   keyboardLayout = "us";
   consoleKeyMap = "us";
 
-  # Intel iGPU only (no NVIDIA dGPU on this model)
-  # Run 'lspci | grep VGA' after installation to confirm your GPU ID
-  intelID = "PCI:0:2:0";   # Update this with your actual integrated GPU ID
-  nvidiaID = "";  # No NVIDIA GPU on this model
+  # --- Default Programs ---
+  browser = "zen";
+  terminal = "ghostty";
 
-  # Enable/Disable Features
-  enableNFS = false; # Enable NFS Support
-  printEnable = false; # Enable Printing Support
-  thunarEnable = true; # Enable Thunar File Manager
-  controllerSupportEnable = true; # Enable Controller Support For Gaming
-  flutterdevEnable = false; # Enable Flutter Development Environment
-  stylixEnable = true; # Enable Stylix System Theming
-  syncthingEnable = true; # Enable Syncthing File Synchronization
+  # --- Stylix Theming ---
+  # Enable system-wide theming from your wallpaper.
+  stylixEnable = true;
+  # Path to the wallpaper you want to use for theming.
+  stylixImage = ../../wallpapers/15.png;
 
-  # Window Manager Choice
-  windowManager = "hyprland"; # Options: "niri" or "hyprland"
+  # --- Hardware & Drivers ---
+  # For Nvidia Prime (hybrid graphics on laptops). Find these with `lspci | grep VGA`.
+  intelID = "PCI:0:2:0";
+  nvidiaID = "PCI:1:0:0";
 
-  # Bar/Shell Choice
-  barChoice = "waybar"; # Options: "dms", "noctalia", or "waybar"
+  # --- Feature Toggles ---
+  # Set these to `true` or `false` to enable or disable features for this host.
+  enableNFS = false;               # Network File System
+  printEnable = false;             # Printing support
+  thunarEnable = true;             # Thunar file manager
+  syncthingEnable = false;         # File synchronization
 
-  # Shell Choice
-  defaultShell = "zsh"; # Options: "fish" or "zsh"
+  # --- Window Manager Specific Settings ---
 
-  # Display Manager Options (choose one - add to host's default.nix)
-  # services.greetd.enable = true;           # greetd with tuigreet (default)
-  # services.displayManager.ly.enable = true; # ly with matrix animation
-
-  # Styling
-  stylixImage = ../../wallpapers/moon-knight.jpg;
+  # Hyprland Animations
+  # Ignored if windowManager is not "hyprland".
+  # Options: animations-def.nix, animations-end4.nix, etc.
+  animChoice = ../../modules/home/hyprland/animations-end4.nix;
 
   # Waybar Choice
-  waybarChoice = ../../modules/home/waybar/waybar-jak-catppuccin.nix;
+  # This is only used if `barChoice` is set to "waybar".
+  waybarChoice = ../../modules/home/waybar/waybar-ddubs.nix;
+  clock24h = true; # For Waybar clock format
 
-  # Animation Choice
-  animChoice = ../../modules/home/hyprland/animations-end4.nix;
+  # Startup Applications (for Hyprland)
+  # Ignored if windowManager is not "hyprland".
+  startupApps = [
+    # "exec-once = my-app"
+  ];
 }
