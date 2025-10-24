@@ -11,8 +11,6 @@
     keyboardLayout
     stylixImage
     startupApps
-    hyprexpoSettings
-    hyprscrollingSettings
     ;
   variables = import ../../../hosts/${host}/variables.nix;
   barChoice = variables.barChoice or "waybar";
@@ -69,12 +67,6 @@ in {
       enable = true;
     };
     settings = {
-      # Plugin configuration
-      plugin = {
-        hyprexpo = hyprexpoSettings;
-        hyprscrolling = hyprscrollingSettings;
-      };
-
       exec-once = [
         "wl-paste --type text --watch cliphist store # Stores only text data"
         "wl-paste --type image --watch cliphist store # Stores only image data"

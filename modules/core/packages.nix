@@ -39,13 +39,13 @@
   # --------------------------------------------------------------------------------
   nixpkgs.config = {
     allowUnfree = true;
-    allowUnfreePredicate = pkg:
-      builtins.elem (lib.getName pkg) [
-        "cursor"
-        "zed"
-        "jdk"
-        "claude"
-      ];
+    # allowUnfreePredicate = pkg:
+    #   builtins.elem (lib.getName pkg) [
+    #     "cursor"
+    #     "zed"
+    #     "jdk"
+    #     "claude"
+    #   ];
   };
 
   # --------------------------------------------------------------------------------
