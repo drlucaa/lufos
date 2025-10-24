@@ -44,7 +44,7 @@ in {
       }
     ];
 
-    initExtra = ''
+    initContent = ''
       # Auto-launch Fish if configured as default shell
       ${if defaultShell == "fish" then ''
         if [[ $(ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]; then
