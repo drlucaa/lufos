@@ -9,4 +9,5 @@
   spawn-at-startup "/usr/lib/xdg-desktop-portal-gtk"
   spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
   spawn-at-startup "crystal-dock" "-d"
+  spawn-at-startup "elephant & walker --gapplication-service"
 ''
