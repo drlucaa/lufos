@@ -25,6 +25,7 @@
     lt = "eza --tree --level=2";
     ll = "eza  -lh --no-user --long";
     la = "eza -lah ";
+    ld = "eza -lhD --icons=auto";
     tree = "eza --tree ";
   };
 }

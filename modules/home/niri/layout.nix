@@ -1,90 +1,68 @@
 { ... }:
 ''
-  config-notification {
-      disable-failed
-  }
+    config-notification {
+        disable-failed
+    }
 
-  gestures {
-      hot-corners {
-          off
-      }
-  }
+    gestures {
+        hot-corners {
+            off
+        }
+    }
 
-  input {
-      keyboard {
-          xkb {
-          }
-          numlock
-      }
-      touchpad {
-      }
-      /-mouse {
-          accel-profile "adaptive"
-          accel-speed 1.0
-      }
-      trackpoint {
-      }
+    input {
+        keyboard {
+            xkb {
+                layout "us"
+            }
+            numlock
+        }
+        touchpad {
+            tap
+            natural-scroll
+        }
+        mouse {
+            accel-profile "flat"
+        }
 
-      focus-follows-mouse max-scroll-amount="0%"
-      warp-mouse-to-focus
-  }
+        warp-mouse-to-focus
+    }
 
-  layout {
-      gaps 9
+    layout {
+        gaps 10
 
-      center-focused-column "never"
-      always-center-single-column
+        center-focused-column "never"
+        always-center-single-column
 
-      preset-column-widths {
-          proportion 0.5
-          proportion 0.66667
-          proportion 1.0
-      }
+        default-column-width { proportion 0.5; }
 
-      default-column-width { proportion 0.5; }
+        border {
+            width 2
+            active-color "#cba6f7"
+            inactive-color "#45475a"
+            urgent-color "#f5c2e7"
+        }
 
-      border {
-          width 2
-          active-color "#cba6f7"
-          inactive-color "#45475a"
-          urgent-color "#f5c2e7"
-      }
+        focus-ring {
+            off
+        }
 
-      focus-ring {
-          off
-          width 2
-          active-color   "#808080"
-          inactive-color "#505050"
-      }
+        struts {
+        }
+    }
 
-      shadow {
-          softness 30
-          spread 5
-          offset x=0 y=5
-          color "#0007"
-      }
+    overview {
+        backdrop-color "#1e1e2e"
 
-      struts {
-      }
-  }
+        workspace-shadow {
+            softness 40
+            spread 10
+            offset x=0 y=10
+            color "#00000050"
+        }
 
-  /-layer-rule {
-      match namespace="^quickshell$"
-      place-within-backdrop true
-  }
-
-  overview {
-      backdrop-color "#1e1e2e"
-
-      workspace-shadow {
-          softness 40
-          spread 10
-          offset x=0 y=10
-          color "#00000050"
-      }
-
-      zoom 0.5
-  }
+        zoom 0.5
+    }
 
   animations {
       workspace-switch {
